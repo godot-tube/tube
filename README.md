@@ -61,14 +61,14 @@ First, create a new `TubeContext` for your project `in Godot FileSystem inspecto
 > For Web builds, however, steps 2 and 3 are mandatory, since local connections do not work on Web.
 
 2. Add `Trackers URLs`, you can use the following:
+    - wss://tracker.androodev.com (Default)
     - wss://tracker.webtorrent.dev
     - wss://open.ftorrent.com
     - wss://tracker.openwebtorrent.com
-    - wss://tracker.androodev.com
 
 3. Add `Stun Servers URLs`, you can use the following:
+    - stun:stun.cloudflare.com:3478 (Default)
     - stun:stun.l.google.com:19302
-    - stun:stun.cloudflare.com:3478
 
 
 #### 2. Adding a `TubeClient` to Your Scene
@@ -240,7 +240,7 @@ To learn more about BitTorrent trackers and WebTorrent, see the [WebTorrent gith
 
 If you need more stable connections for your game, you can deploy your own tracker servers, see [Using your own servers](#using-your-own-servers).
 
-Many public STUN servers are available, such as those provided by Google.
+Many public STUN servers are available, such as those provided by Cloudflare or Google.
 You can find an updated list here: [Public STUN list](https://gist.github.com/mondain/b0ec1cf5f60ae726202e)
 
 Currently, there are no reliable public TURN servers.
@@ -265,7 +265,7 @@ Once deployed, add your TURN server’s URL and credentials to your `TubeContext
 For security reasons, it’s recommended to use ephemeral credentials to prevent unauthorized access to your TURN server.
 This approach requires additional setup, such as generating credentials dynamically through a secure backend.
 
-There are also third-party TURN hosting services available, but most are paid solutions.
+There are also third-party TURN hosting services available, but most are paid solutions. For example, [Cloudflare](https://developers.cloudflare.com/realtime/turn/) offers managed TURN on free plans. See an [example API here](https://github.com/jonandrewdavis/ws-tracker-api/blob/main/src/turn.ts).
 
 
 ## Credits

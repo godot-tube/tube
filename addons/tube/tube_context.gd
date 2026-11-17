@@ -21,11 +21,15 @@ const _APP_ID_CHARACTER_SET := "!#$%&()*+,-./ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi
 ## For readability by players, consider removing ambiguous characters (e.g., oO0, ilj1I, z2).
 @export_multiline var session_id_characters_set: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
 
-## List of tracker server URLs used for session signaling.
-@export var trackers_urls: Array[String] = []
+## List of tracker server URLs used for session signaling. Defaults to a reliable one. Use open trackers for a more decentralized approach.
+@export var trackers_urls: Array[String] = [
+	"wss://tracker.androodev.com",
+]
 
 ## List of STUN server URLs used for WebRTC ICE candidate resolution.
-@export var stun_servers_urls: Array[String] = []
+@export var stun_servers_urls: Array[String] = [
+	"stun:stun.cloudflare.com:3478",
+]
 
 ## List of TURN servers (optional). Turn server are dictionnary in the form:
 ## [codeblock]
